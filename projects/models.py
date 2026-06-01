@@ -29,7 +29,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     #realtionship OneToMany
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)#CASCADE:It tells Django what should happen to the projects if the owner's user account is completely deleted.
+    user = models.ForeignKey(User, on_delete=models.CASCADE ,null =True )#CASCADE:It tells Django what should happen to the projects if the owner's user account is completely deleted.
 
     def __str__(self):
         return self.title
